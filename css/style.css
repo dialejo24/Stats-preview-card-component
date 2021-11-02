@@ -1,6 +1,115 @@
 .attribution { 
-    font-size: 11px; text-align: center; 
+    font-size: 11px; 
+    text-align: center; 
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+
+html{
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --very-dark-blue:hsl(233, 47%, 7%);
+    --dark-desaturated-blue:hsl(244, 38%, 16%);
+    --soft-violet:hsl(277, 64%, 61%);
+    --white:hsl(0, 0%, 100%);
+    --slightly-transparent-white:hsla(0, 0%, 100%, 0.75);
+    --transparent-white:hsla(0, 0%, 100%, 0.6);
+}
+
+body{
+    font-size: 15px;
+    background-color: var(--very-dark-blue);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+img{
+    max-width: 100%;
+}
+
+.card{
+    width:90%;
+    background-color: var(--dark-desaturated-blue);
+    display: grid;
+    gap:2.2em;
+    border-radius: 10px;
+}
+
+.card__img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-image: url("../images/image-header-desktop.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    height:280px
+}
+.card__img::before{
+    content:"";
+    position: absolute;
+    background-color: hsl(277, 64%, 61%,.4);
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card__info{
+    display: grid;
+    justify-items: center;
+    padding-bottom: 2.5em;
+}
+
+.content{
+    width:80%;
+    text-align: center;
+}
+.content h1{
+    color:var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.7rem;
+    margin-bottom: .7em;
+}
+.content p{
+    color: var(--slightly-transparent-white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    margin-bottom:2em;
+}
+.accent{
+    color:var(--soft-violet);
+}
+
+.stats{
+    display: grid;
+    gap:1em;
+}
+.stats div{
+    color:var(--white);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size:1.2rem;
+}
+.stats__companies,
+.stats__queries,
+.stats__templates{
+    color:var(--transparent-white);
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight:400;
 }
