@@ -30,8 +30,6 @@ body{
     font-size: 15px;
     background-color: var(--very-dark-blue);
     display: grid;
-    justify-items: center;
-    align-items: center;
     min-height: 100vh;
 }
 
@@ -45,6 +43,9 @@ img{
     display: grid;
     gap:2.2em;
     border-radius: 10px;
+    max-width: 375px;
+    justify-self: center;
+    align-self: center;
 }
 
 .card__img{
@@ -54,12 +55,12 @@ img{
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: relative;
-    height:280px
+    height:280px;
 }
 .card__img::before{
     content:"";
     position: absolute;
-    background-color: hsl(277, 64%, 61%,.4);
+    background-color: hsl(278, 100%, 40%,.4);
     top: 0;
 	bottom: 0;
 	left: 0;
@@ -81,7 +82,7 @@ img{
 .content h1{
     color:var(--white);
     font-family: 'Inter', sans-serif;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     margin-bottom: .7em;
 }
 .content p{
@@ -102,14 +103,50 @@ img{
     color:var(--white);
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size:1.2rem;
+    font-size:1.1rem;
 }
 .stats__companies,
 .stats__queries,
 .stats__templates{
     color:var(--transparent-white);
-    font-size: .8rem;
+    font-size: .7rem;
     text-transform: uppercase;
     font-family: 'Lexend Deca', sans-serif;
     font-weight:400;
+}
+
+@media(min-width:850px){
+    .card{
+        grid-auto-flow: column;
+        grid-template-columns: 1.05fr 1fr;
+        gap:0em;
+        max-width: 850px;
+    }
+    .card__img{
+        height: auto;
+        order:2;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 10px;
+    }
+    .card__img::before{
+        border-bottom-right-radius: 10px;
+    }
+    .card__info{
+        padding-block: 3em;
+    }
+    .content{
+        text-align: left;
+        margin-left: 1em;
+    }
+    .content p{
+        margin-bottom: 4em;
+        font-size: .75rem;
+        line-height: 1.7;
+        font-weight: 400;
+        width:90%;
+    }
+    .stats{
+        grid-auto-flow: column;
+        gap:0em;
+    }
 }
